@@ -36,6 +36,10 @@ class Snake:
         if int(self.head.xcor()) == 300 or int(self.head.xcor() == -300) or \
                 int(self.head.ycor()) == 280 or int(self.head.ycor()) == -280:
             return False
+        else:
+            for i in range(len(self.snakesegment) - 1):
+                if int(self.head.distance(self.snakesegment[i])) < 20:
+                    return False
         return True
 
     def turn_up(self):
