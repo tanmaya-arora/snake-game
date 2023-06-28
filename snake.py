@@ -33,7 +33,8 @@ class Snake:
         self.head.forward(20)
 
     def check_game_status(self):
-        if int(self.head.xcor()) == 300 or int(self.head.xcor() == -300):
+        if int(self.head.xcor()) == 300 or int(self.head.xcor() == -300) or \
+                int(self.head.ycor()) == 280 or int(self.head.ycor()) == -280:
             return False
         return True
 
@@ -61,8 +62,6 @@ class Snake:
             self.snakesegment[i].goto(self.gotopositions[i])
 
         self.gotopositions.append((self.gotopositions[-1][0]+20, self.gotopositions[-1][1]))
-
-        print(self.gotopositions)
 
         for i in range(len(self.snakesegment)):
             self.snakesegment[i].color("white")
