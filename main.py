@@ -1,5 +1,6 @@
 from turtle import Screen
 from snake import Snake
+from food import Food
 import time
 
 screen = Screen()
@@ -14,21 +15,23 @@ screen.tracer(0)
 #     s3.left(90)
 
 snake = Snake()
+food = Food()
 is_game_on = snake.check_game_status()
+
+screen.listen()
+screen.onkeypress(snake.turn_up, 'w')
+screen.onkeypress(snake.turn_down, "s")
+screen.onkeypress(snake.turn_left, "a")
+screen.onkeypress(snake.turn_right, "d")
 
 while is_game_on:
     screen.update()
-    time.sleep(0.8)
+    time.sleep(0.4)
     snake.move()
     is_game_on = snake.check_game_status()
-
-
-
-# screen.onkey(snake.turn_down(), "S")
-# screen.onkey(snake.turn_left(), "A")
-# screen.onkey(snake.turn_right(), "D")
-#screen.onkeyrelease(snake.turn_up(), 'W')
-#screen.onscreenclick(snake.turn_up())
+    if snake.head.distance(food) < 15:
+        food.refresh()
+        snake.add_segment()
 
 
 screen.exitonclick()
