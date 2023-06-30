@@ -37,4 +37,7 @@ while is_game_on:
         scoreboard.increase_score()
 
 
+if not is_game_on:
+    scoreboard.update_highscore()
+    print("Score updated")
 #screen.exitonclick()

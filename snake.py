@@ -8,7 +8,7 @@ class Snake:
 
     def __init__(self):
         self.snakesegment = []
-        self.gotopositions = [(-20, 0), (0, 0), (20, 0)]
+        self.gotopositions = [(-280, 0), (-260, 0), (-240, 0)]
         for i in range(3):
             self.snakesegment.append(self.create_snake())
             self.snakesegment[i].color("white")

@@ -6,7 +6,7 @@ class Food(Turtle):
         super().__init__()
         self.shape("circle")
         self.penup()
-        self.shapesize(stretch_len=0.5, stretch_wid=0.5)
+        self.shapesize(stretch_len=0.75, stretch_wid=0.75)
         self.color("blue")
         self.speed("fastest")
         random_x = random.randint(-200, 200)
